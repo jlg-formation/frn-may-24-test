@@ -15,6 +15,18 @@ describe("template spec", () => {
     cy.get("[aria-label='Add']").click();
     cy.get("[aria-label='smile']").click();
 
+    cy.get("[aria-label='image'] [aria-label='smile']").should(
+      "have.css",
+      "width",
+      "40px"
+    );
+
     cy.get("[aria-label='image'] [aria-label='smile']").click().click();
+
+    cy.get("[aria-label='image'] [aria-label='smile']").should(
+      "have.css",
+      "width",
+      "80px"
+    );
   });
 });
